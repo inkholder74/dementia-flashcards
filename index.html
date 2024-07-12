@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dementia Care Helper</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            text-align: center;
+            padding: 20px;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        .image-button {
+            padding: 15px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            background-color: transparent;
+        }
+        .image-button img {
+            width: 100px;
+            height: auto;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        .displayed-image {
+            width: 500px; /* Set a fixed width */
+            height: 300px; /* Set a fixed height */
+            cursor: pointer;
+        }
+        .category {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dementia Care Helper</h1>
+    <p>Click on an image to show a larger view. Click again to hide the larger view.</p>
+
+    <!-- Basic Activities of Daily Living -->
+    <div class="category" id="basic-category">
+        <h2>Basic Activities of Daily Living</h2>
+        <!-- Morning Routine -->
+        <button class="image-button" onclick="toggleImage('01-good_morning', 'basic-image-container')">
+            <img src="images/01-good_morning.png" alt="Good morning">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-bathroom', 'basic-image-container')">
+            <img src="images/01-bathroom.png" alt="Bathroom">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-toilet', 'basic-image-container')">
+            <img src="images/01-toilet.png" alt="Toilet">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-wash_hands', 'basic-image-container')">
+            <img src="images/01-wash_hands.png" alt="Wash hands">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-brush_teeth', 'basic-image-container')">
+            <img src="images/01-brush_teeth.png" alt="Brush teeth">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-shave', 'basic-image-container')">
+            <img src="images/01-shave.png" alt="Shave">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-shower', 'basic-image-container')">
+            <img src="images/01-shower.png" alt="Shower">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-soap', 'basic-image-container')">
+            <img src="images/01-soap.png" alt="Soap">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-comb_hair', 'basic-image-container')">
+            <img src="images/01-comb_hair.png" alt="Comb hair">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-hearing_aid', 'basic-image-container')">
+            <img src="images/01-hearing_aid.png" alt="Hearing aid">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-shirt', 'basic-image-container')">
+            <img src="images/01-shirt.png" alt="Shirt">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-underwear', 'basic-image-container')">
+            <img src="images/01-underwear.png" alt="Underwear">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-trousers', 'basic-image-container')">
+            <img src="images/01-trousers.png" alt="Trousers">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-socks', 'basic-image-container')">
+            <img src="images/01-socks.png" alt="Socks">
+        </button>
+
+        <!-- Meals and Drinks -->
+        <button class="image-button" onclick="toggleImage('01-hot_drink', 'basic-image-container')">
+            <img src="images/01-hot_drink.png" alt="Hot drink">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-cold_drink', 'basic-image-container')">
+            <img src="images/01-cold_drink.png" alt="Cold drink">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-meal_time', 'basic-image-container')">
+            <img src="images/01-meal_time.png" alt="Meal time">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-knife_fork_spoon', 'basic-image-container')">
+            <img src="images/01-knife_fork_spoon.png" alt="Knife, fork, spoon">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-hungry', 'basic-image-container')">
+            <img src="images/01-hungry.png" alt="Hungry">
+        </button>
+
+        <!-- Mobility and Comfort -->
+        <button class="image-button" onclick="toggleImage('01-get_up_from_the_chair', 'basic-image-container')">
+            <img src="images/01-get_up_from_the_chair.png" alt="Get up from the chair">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-get_your_cane', 'basic-image-container')">
+            <img src="images/01-get_your_cane.png" alt="Get your cane">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-get_your_walker', 'basic-image-container')">
+            <img src="images/01-get_your_walker.png" alt="Get your walker">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-downstairs', 'basic-image-container')">
+            <img src="images/01-downstairs.png" alt="Downstairs">
+        </button>
+        <button class="image-button" onclick="toggleImage('01-upstairs', 'basic-image-container')">
+            <img src="images/01-upstairs.png" alt="Upstairs">
+        </button>
+
+        <!-- Evening Routine -->
+        <button class="image-button" onclick="toggleImage('01-goodnight', 'basic-image-container')">
+            <img src="images/01-goodnight.png" alt="Goodnight">
+        </button>
+
+        <!-- Display larger image -->
+        <div class="image-container" id="basic-image-container"></div>
+    </div>
+
+    <!-- Activities of Daily Living -->
+    <div class="category" id="daily-category">
+        <h2>Activities of Daily Living</h2>
+        <!-- Add images in a logical order -->
+        <button class="image-button" onclick="toggleImage('02-take_medications', 'daily-image-container')">
+            <img src="images/02-take_medications.png" alt="Take Medications">
+        </button>
+        <button class="image-button" onclick="toggleImage('02-telephone', 'daily-image-container')">
+            <img src="images/02-telephone.png" alt="Telephone">
+        </button>
+        <button class="image-button" onclick="toggleImage('02-laundry', 'daily-image-container')">
+            <img src="images/02-laundry.png" alt="Laundry">
+        </button>
+        <button class="image-button" onclick="toggleImage('02-cooking', 'daily-image-container')">
+            <img src="images/02-cooking.png" alt="Cooking">
+        </button>
+        <button class="image-button" onclick="toggleImage('02-washing_dishes', 'daily-image-container')">
+            <img src="images/02-washing_dishes.png" alt="Washing Dishes">
+        </button>
+        <button class="image-button" onclick="toggleImage('02-house_cleaning', 'daily-image-container')">
+            <img src="images/02-house_cleaning.png" alt="House Cleaning">
+        </button>
+        <button class="image-button" onclick="toggleImage('02-emergency_call', 'daily-image-container')">
+            <img src="images/02-emergency_call.png" alt="Emergency Call">
+        </button>
+        <!-- Display larger image -->
+        <div class="image-container" id="daily-image-container"></div>
+    </div>
+
+    <!-- Activities and Places -->
+    <div class="category" id="activities-category">
+        <h2>Activities and Places</h2>
+        <!-- Add images in a logical order -->
+        <button class="image-button" onclick="toggleImage('03-watch_TV', 'activities-image-container')">
+            <img src="images/03-watch_TV.png" alt="Watch TV">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-appointment', 'activities-image-container')">
+            <img src="images/03-appointment.png" alt="Appointment">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-shopping', 'activities-image-container')">
+            <img src="images/03-shopping.png" alt="Shopping">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-bank', 'activities-image-container')">
+            <img src="images/03-bank.png" alt="Bank">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-church', 'activities-image-container')">
+            <img src="images/03-church.png" alt="Church">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-gardening', 'activities-image-container')">
+            <img src="images/03-gardening.png" alt="Gardening">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-reading', 'activities-image-container')">
+            <img src="images/03-reading.png" alt="Reading">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-seniors_centre', 'activities-image-container')">
+            <img src="images/03-seniors_centre.png" alt="Seniors Centre">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-visit_family_and_friends', 'activities-image-container')">
+            <img src="images/03-visit_family_and_friends.png" alt="Visit Family and Friends">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-walk', 'activities-image-container')">
+            <img src="images/03-walk.png" alt="Walk">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-go_for_a_drive', 'activities-image-container')">
+            <img src="images/03-go_for_a_drive.png" alt="Go for a Drive">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-seatbelt', 'activities-image-container')">
+            <img src="images/03-seatbelt.png" alt="Seatbelt">
+        </button>
+        <button class="image-button" onclick="toggleImage('03-arts_&_crafts', 'activities-image-container')">
+            <img src="images/03-arts_&_crafts.png" alt="Arts and Crafts">
+        </button>
+        <!-- Display larger image -->
+        <div class="image-container" id="activities-image-container"></div>
+    </div>
+
+    <!-- Emotions and Feelings -->
+    <div class="category" id="emotions-category">
+        <h2>Emotions and Feelings</h2>
+        <!-- Add images in a logical order -->
+        <button class="image-button" onclick="toggleImage('04-yes', 'emotions-image-container')">
+            <img src="images/04-yes.png" alt="Yes">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-no', 'emotions-image-container')">
+            <img src="images/04-no.png" alt="No">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-cold', 'emotions-image-container')">
+            <img src="images/04-cold.png" alt="Cold">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-hot', 'emotions-image-container')">
+            <img src="images/04-hot.png" alt="Hot">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-angry', 'emotions-image-container')">
+            <img src="images/04-angry.png" alt="Angry">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-bored', 'emotions-image-container')">
+            <img src="images/04-bored.png" alt="Bored">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-happy', 'emotions-image-container')">
+            <img src="images/04-happy.png" alt="Happy">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-sad', 'emotions-image-container')">
+            <img src="images/04-sad.png" alt="Sad">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-sick', 'emotions-image-container')">
+            <img src="images/04-sick.png" alt="Sick">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-tired', 'emotions-image-container')">
+            <img src="images/04-tired.png" alt="Tired">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-too_noisy', 'emotions-image-container')">
+            <img src="images/04-too_noisy.png" alt="Too Noisy">
+        </button>
+        <button class="image-button" onclick="toggleImage('04-unsure', 'emotions-image-container')">
+            <img src="images/04-unsure.png" alt="Unsure">
+        </button>
+        <!-- Display larger image -->
+        <div class="image-container" id="emotions-image-container"></div>
+    </div>
+
+    <script>
+        function toggleImage(activity, containerId) {
+            const container = document.getElementById(containerId);
+            const existingImage = container.querySelector('.displayed-image');
+
+            if (existingImage && existingImage.src.includes(activity)) {
+                container.innerHTML = '';
+            } else {
+                container.innerHTML = `<img class="displayed-image" src="images/${activity}.png" alt="${activity}" onclick="toggleImage('${activity}', '${containerId}')">`;
+            }
+        }
+    </script>
+</body>
+</html>
